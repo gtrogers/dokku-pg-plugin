@@ -6,11 +6,11 @@ FROM	ubuntu:trusty
 RUN	echo "#!/bin/sh\nexit 101" > /usr/sbin/policy-rc.d; chmod +x /usr/sbin/policy-rc.d
 
 # add postres repo
-RUN apt-get updatie && LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y -q wget 
+RUN apt-get update && LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y -q wget 
 RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" > /etc/apt/sources.list.d/pgdg.list
 RUN wget --quiet -O - "https://www.postgresql.org/media/keys/ACCC4CF8.asc" | sudo apt-key add -
 
-RUN apt-get updatie && LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y -q postgresql-9.4 postgresql-contrib-9.4
+RUN apt-get update && LC_ALL=C DEBIAN_FRONTEND=noninteractive apt-get install -y -q postgresql-9.4 postgresql-contrib-9.4
 RUN rm -rf /var/lib/apt/lists/*
 RUN apt-get clean
 

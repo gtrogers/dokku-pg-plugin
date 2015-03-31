@@ -1,14 +1,13 @@
-PostgreSQL plugin for Dokku
----------------------------
+PostgreSQL plugin for Dokku with 9.4 support
+--------------------------------------------
 
-Project: https://github.com/progrium/dokku
+This is a forked version of the postgresql plugin to support postgres 9.4
 
-**Warning: This plugin is under development and still only tested with the below dependencies**
+Key changes
 
-Requirements
-------------
-* Docker version `0.7.2` or higher
-* Dokku version `0.2.1` or higher
+ - Moved all of the file dependencies into one repo
+ - Changed the Dockerfile to pull in postgresql-9.4 on Ubuntu 14.04
+ - Changed the startup script to use 9.4
 
 Installation
 ------------
